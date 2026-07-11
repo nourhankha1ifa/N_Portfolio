@@ -1,0 +1,10 @@
+[build]
+  # Plain static HTML/CSS/JS site — no build tool, no package.json, nothing to compile.
+  command = "echo 'Static site — no build step required'"
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
