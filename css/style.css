@@ -52,6 +52,18 @@
     --accent-glow: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.08) 0%, transparent 80%);
 }
 
+[data-theme="light"] .ticker-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(124, 58, 237, 0.15);
+}
+
+[data-theme="light"] .ticker-item:hover {
+    background: rgba(124, 58, 237, 0.08);
+    border-color: var(--color-primary);
+}
+
+/* Light mode overrides for CV button are removed as it now shares the same premium gradient style in both dark and light modes. */
+
 /* --- Base & Reset --- */
 * {
     margin: 0;
@@ -715,8 +727,8 @@ select {
     gap: 0.5rem;
     width: 100%;
     padding: 0.85rem;
-    background: rgba(30, 41, 59, 0.4);
-    border: 1px solid var(--border-color);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    border: none;
     border-radius: 8px;
     color: #fff;
     text-decoration: none;
@@ -724,13 +736,12 @@ select {
     font-weight: 600;
     font-size: 0.9rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25);
 }
 
 .btn-terminal-cv:hover {
-    border-color: var(--color-secondary);
-    background: rgba(198, 92, 154, 0.08);
-    box-shadow: 0 6px 20px rgba(198, 92, 154, 0.35);
+    background: linear-gradient(135deg, var(--color-primary) 10%, var(--color-secondary) 90%);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
     transform: translateY(-2px);
 }
 
@@ -794,118 +805,7 @@ select {
     font-size: 0.95rem;
 }
 
-/* --- GitHub Contributions Card --- */
-.github-contributions-card {
-    width: 100%;
-    margin-top: 1.5rem;
-}
 
-.contribution-months {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 0.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-muted);
-    font-size: 0.75rem;
-}
-
-.contribution-grid-wrapper {
-    width: 100%;
-    overflow-x: auto;
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.5rem;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
-}
-
-.contribution-grid-wrapper::-webkit-scrollbar {
-    height: 6px;
-}
-
-.contribution-grid-wrapper::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 3px;
-}
-
-.contribution-grid {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(7, 10px);
-    grid-auto-columns: 10px;
-    gap: 3px;
-    width: max-content;
-}
-
-.contrib-cell {
-    width: 10px;
-    height: 10px;
-    border-radius: 2px;
-    background-color: rgba(255, 255, 255, 0.05);
-    transition: background-color 0.2s ease;
-}
-
-.contrib-cell.level-0 {
-    background-color: rgba(255, 255, 255, 0.04);
-}
-
-.contrib-cell.level-1 {
-    background-color: rgba(124, 58, 237, 0.25);
-}
-
-.contrib-cell.level-2 {
-    background-color: rgba(124, 58, 237, 0.5);
-}
-
-.contrib-cell.level-3 {
-    background-color: rgba(198, 92, 154, 0.75);
-}
-
-.contrib-cell.level-4 {
-    background-color: rgba(198, 92, 154, 1.0);
-}
-
-.contribution-legend {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    margin-top: 0.75rem;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.legend-scale {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-}
-
-.scale-box {
-    width: 10px;
-    height: 10px;
-    border-radius: 2px;
-}
-
-.scale-box.level-0 {
-    background-color: rgba(255, 255, 255, 0.04);
-}
-
-.scale-box.level-1 {
-    background-color: rgba(124, 58, 237, 0.25);
-}
-
-.scale-box.level-2 {
-    background-color: rgba(124, 58, 237, 0.5);
-}
-
-.scale-box.level-3 {
-    background-color: rgba(198, 92, 154, 0.75);
-}
-
-.scale-box.level-4 {
-    background-color: rgba(198, 92, 154, 1.0);
-}
 
 /* --- Technical Skills Marquee --- */
 .skills-ticker-section {
@@ -1007,7 +907,7 @@ select {
     gap: 0.75rem;
     font-size: 1.25rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-color);
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.85rem;
     margin-bottom: 0.25rem;
@@ -1067,7 +967,7 @@ select {
 .stats-card-title {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-color);
     font-family: var(--font-primary);
     margin-bottom: 0.5rem;
 }
@@ -1208,19 +1108,18 @@ select {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.project-link-btn:hover {
+    color: var(--color-secondary);
 }
 
 .project-link-btn svg {
     width: 16px;
     height: 16px;
-}
-
-.project-link-btn-text {
-    color: var(--color-primary);
-}
-
-.project-link-btn-text:hover {
-    color: var(--color-secondary);
 }
 
 
@@ -1478,6 +1377,36 @@ textarea.form-control {
 .copyright {
     font-size: 0.9rem;
     color: var(--text-muted);
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.viewer-count {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    padding: 0.35rem 0.7rem;
+    border-radius: 6px;
+    font-family: var(--font-primary);
+}
+
+[data-theme="light"] .viewer-count {
+    background: rgba(124, 58, 237, 0.03);
+    border-color: rgba(124, 58, 237, 0.1);
+}
+
+.viewer-count svg {
+    width: 14px;
+    height: 14px;
+    color: var(--color-primary);
 }
 
 .back-to-top {
@@ -1984,10 +1913,18 @@ textarea.form-control {
     .about-traits-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 600px) {
     .about-traits-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .skills-grid {
         grid-template-columns: 1fr !important;
     }
 }

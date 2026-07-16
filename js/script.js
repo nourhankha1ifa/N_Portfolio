@@ -1,3 +1,144 @@
+// Global projects detail metadata data-store
+const projectsData = {
+    hospital: {
+        title: "Hospital Analytics Dashboard",
+        images: [
+            "Dashboard images/Power BI/DEPI/Hospital Dashboard_P1_Overview.png",
+            "Dashboard images/Power BI/DEPI/Hospital Dashboard_P2_Medical Analysis.png",
+            "Dashboard images/Power BI/DEPI/Hospital Dashboard_P3_Financial Analysis.png"
+        ],
+        tools: "Power BI, Power Query, DAX, Data Modeling",
+        dataset: "Clinical Workload & Financial Records",
+        github: "https://github.com/nourhankha1ifa/Data_Analysis/tree/main/DEPI/Power%20BI/Power%20BI%206",
+        readme: "### Overview\nThis 3-page interactive hospital analytics dashboard maps clinical workloads, patient department admissions, and hospital financial performance. It helps hospital administration optimize resource allocation and evaluate profitability.\n\n### Key Insights & Features\n- **Clinical Admissions:** Tracks patient admissions, average length of stay, and department workload over time.\n- **Medical Analysis:** Visualizes physician metrics, clinical department load, and patient satisfaction ratings.\n- **Financial Analysis:** Explores revenue trends, expenses, and net profit margins across departments."
+    },
+    amazon: {
+        title: "Amazon Product Sales Dashboard",
+        images: [
+            "Dashboard images/Power BI/DEPI/Amazon Dashboard_P1_Overview.png",
+            "Dashboard images/Power BI/DEPI/Amazon Dashboard_P2_Products.png",
+            "Dashboard images/Power BI/DEPI/Amazon Dashboard_P3_Product view.png",
+            "Dashboard images/Power BI/DEPI/Amazon Dashboard_Tooltip.png"
+        ],
+        tools: "Power BI, Data Modeling, DAX, Power Query",
+        dataset: "Amazon Sales Dataset",
+        github: "https://github.com/nourhankha1ifa/Data_Analysis/tree/main/DEPI/Power%20BI/Power%20BI%203",
+        readme: "### Overview\nA comprehensive 4-page dashboard analyzing Amazon product sales, units sold, and customer ratings. It features dynamic toggles for quick metric switching and drill-down product lookup details.\n\n### Key Insights & Features\n- **Sales & Units Toggle:** Instantly switches dashboard charts between revenue and units sold.\n- **Product Lookups:** Detailed card overlays and tooltips showing individual product performance and sales rank.\n- **Dynamic Modeling:** Star-schema database design connecting sales fact tables with customer demographics and category dimensions."
+    },
+    dssurvey: {
+        title: "Data Science Survey Analytics",
+        images: [
+            "Dashboard images/Power BI/DEPI/Data Science Survey Dashboard_P1_Overview.png",
+            "Dashboard images/Power BI/DEPI/Data Science Survey Dashboard_P2_Career.png",
+            "Dashboard images/Power BI/DEPI/Data Science Survey Dashboard_P3_Satisfaction.png"
+        ],
+        tools: "Power BI, Power Query, Data Cleaning, ETL",
+        dataset: "Global Data Science Survey",
+        github: "https://github.com/nourhankha1ifa/Data_Analysis/tree/main/DEPI/Power%20BI/Power%20BI%202",
+        readme: "### Overview\nAn in-depth dashboard examining career trends, education, salaries, and tool satisfaction values across the global data science community. Raw survey response data was cleaned and transformed using Power Query.\n\n### Key Insights & Features\n- **Salary Demographics:** Breaks down average salary by country, experience level, and job title.\n- **Tool Satisfaction:** Evaluates user feedback and satisfaction ratings for python, R, SQL, and BI tools.\n- **Education Pathways:** Displays certificates, university degrees, and self-learning preferences of survey respondents."
+    },
+    adventureworks: {
+        title: "Sales Performance Dashboard",
+        images: [
+            "Dashboard images/Power BI/EraaSoft/Sales Performance Dashboard.png",
+            "Dashboard images/Power BI/EraaSoft/Sales Performance Dashboard Drill Through Snapshot.png"
+        ],
+        tools: "Power BI, SQL Server, DirectQuery, DAX",
+        dataset: "AdventureWorks Database",
+        github: "https://github.com/nourhankha1ifa/Data_Analysis/tree/main/EraaSoft/Power%20BI/Power%20BI%203",
+        readme: "### Overview\nA live-connected Power BI dashboard utilizing DirectQuery to report real-time sales performance. Key performance indicators track orders, delay metrics, and salesperson drilling cards.\n\n### Key Insights & Features\n- **Live SQL Server Connection:** Demonstrates real-time querying capabilities with DirectQuery database integration.\n- **Salesperson Performance:** Provides drill-through pages analyzing individual salesperson contributions and targets.\n- **Order Delay Metrics:** Identifies logistics bottlenecks by tracking order processing and delivery lag times."
+    },
+    excelsales: {
+        title: "Excel Sales Performance Dashboard",
+        images: [
+            "Dashboard images/Excel/DEPI/Sales Performace Dashboard.png"
+        ],
+        tools: "Excel, PivotTables, Slicers, Data Visualization",
+        dataset: "Corporate Sales Records",
+        github: "https://github.com/nourhankha1ifa/Data_Analysis/tree/main/DEPI/Excel/Excel%201",
+        readme: "### Overview\nAn interactive sales performance dashboard built entirely in Excel. Enables dynamic exploration of sales, profits, discounts, and production costs by category, month, and year.\n\n### Key Insights & Features\n- **Interactive Slicers:** Allows immediate filtering by region, category, and sales channel.\n- **Profitability Analysis:** Pinpoints products with high discounts that affect overall profit margins.\n- **Time Series Insights:** Displays weekly and monthly sales trends with integrated target lines."
+    },
+    excelretail: {
+        title: "Excel Retail Electronics Sales",
+        images: [
+            "Dashboard images/Excel/EraaSoft/Sales Performance.png"
+        ],
+        tools: "Excel, Power Pivot, Data Modeling, DAX",
+        dataset: "Electronics Branch Sales (Egypt)",
+        github: "https://github.com/nourhankha1ifa/Data_Analysis/tree/main/EraaSoft/Excel",
+        readme: "### Overview\nA data model dashboard utilizing Excel Power Pivot to analyze electronics retail performance. Tracks branch profitability, electronics classes, and product segments across regional markets.\n\n### Key Insights & Features\n- **Power Pivot Data Model:** Integrates multiple tables into a unified relational data model inside Excel.\n- **Branch Profitability:** Compares performance of retail outlets in Egypt to identify top revenue generators.\n- **Product Segment Analysis:** Analyzes sales distribution by product category (laptops, phones, smart home devices)."
+    },
+    excelorder: {
+        title: "Excel Order Analysis Dashboard",
+        images: [
+            "Dashboard images/Excel/EraaSoft/Order Analysis.png"
+        ],
+        tools: "Excel, Power Pivot, Data Modeling",
+        dataset: "E-Commerce Orders Dataset",
+        github: "https://github.com/nourhankha1ifa/Data_Analysis/tree/main/EraaSoft/Excel",
+        readme: "### Overview\nAn Excel dashboard built with Power Pivot analyzing regional order distribution, product performance, and customer return rates.\n\n### Key Insights & Features\n- **Regional Distribution:** Maps sales volume and order numbers by geographical region.\n- **Product Performance:** Details best-selling products and ranks categories by overall profitability.\n- **Return Rate Tracking:** Visualizes return percentages to help identify product quality issues or delivery challenges."
+    },
+    excelsalesdist: {
+        title: "Excel Sales Distribution",
+        images: [
+            "Dashboard images/Excel/DEPI/Sales Distribution.png"
+        ],
+        tools: "Excel, Power Pivot, Target Tracking",
+        dataset: "Sales Target & Revenue Data",
+        github: "https://github.com/nourhankha1ifa/Data_Analysis/tree/main/DEPI/Excel/Excel%202",
+        readme: "### Overview\nAn Excel analytical dashboard tracking weekly revenue trends, evaluating sales performance against pre-set business targets, and breaking down sales distribution by region.\n\n### Key Insights & Features\n- **Sales-to-Target Evaluation:** Measures individual sales rep and regional team performance against quarterly goals.\n- **Weekly Trends:** Visualizes revenue fluctuations week-over-week to highlight seasonal demand.\n- **Regional Distribution:** Breaks down sales volume by territory to optimize inventory management."
+    },
+    pythoneda: {
+        title: "Python Data Cleaning & EDA",
+        images: [
+            "images/python_analysis.png"
+        ],
+        tools: "Python, Pandas, Plotly, Jupyter Notebooks",
+        dataset: "Sales Transaction Data",
+        github: "https://github.com/nourhankha1ifa/Data_Analysis/tree/main/DEPI/Python",
+        readme: "### Overview\nA comprehensive Jupyter Notebook covering the data cleaning and exploratory data analysis (EDA) pipeline. Resolves data anomalies, handles missing values, and performs multivariate statistical profiling.\n\n### Key Insights & Features\n- **Anomalies Detection:** Cleans duplicate entries, corrects spelling inconsistencies, and handles outliers using robust statistical metrics.\n- **Exploratory Data Analysis:** Explores correlation matrices, distributions, and patterns among variables.\n- **Interactive Visualizations:** Employs Plotly to build interactive, publishable graphs illustrating data profiles."
+    }
+};
+
+// Helper function to safely build Lucide-style SVG icons
+function createLucideIcon(iconName) {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke', 'currentColor');
+    svg.setAttribute('stroke-width', '2');
+    svg.setAttribute('stroke-linecap', 'round');
+    svg.setAttribute('stroke-linejoin', 'round');
+    svg.style.width = '16px';
+    svg.style.height = '16px';
+    svg.style.display = 'inline-block';
+    svg.style.verticalAlign = 'middle';
+
+    if (iconName === 'database') {
+        const ellipse = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
+        ellipse.setAttribute('cx', '12');
+        ellipse.setAttribute('cy', '5');
+        ellipse.setAttribute('rx', '9');
+        ellipse.setAttribute('ry', '3');
+        svg.appendChild(ellipse);
+        const path1 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path1.setAttribute('d', 'M3 5V19C3 20.66 7.03 22 12 22C16.97 22 21 20.66 21 19V5');
+        svg.appendChild(path1);
+        const path2 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path2.setAttribute('d', 'M3 12C3 13.66 7.03 15 12 15C16.97 15 21 13.66 21 12');
+        svg.appendChild(path2);
+    } else if (iconName === 'tool' || iconName === 'wrench') {
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', 'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z');
+        svg.appendChild(path);
+    } else if (iconName === 'github') {
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', 'M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22');
+        svg.appendChild(path);
+    }
+    return svg;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     /* --- Theme Toggle Logic --- */
@@ -398,12 +539,23 @@ document.addEventListener('DOMContentLoaded', () => {
         if (project.dataset && project.dataset !== "N/A") {
             const metaDataset = document.createElement('div');
             metaDataset.className = 'modal-meta-item';
+
             const lbl1 = document.createElement('span');
             lbl1.className = 'modal-meta-label';
-            lbl1.textContent = "Data Source";
+
+            // Database Icon
+            const dbIcon = createLucideIcon('database');
+            dbIcon.style.marginRight = '0.35rem';
+            lbl1.appendChild(dbIcon);
+
+            const dbText = document.createElement('span');
+            dbText.textContent = "Data Source";
+            lbl1.appendChild(dbText);
+
             const val1 = document.createElement('span');
             val1.className = 'modal-meta-value';
             val1.textContent = project.dataset;
+
             metaDataset.appendChild(lbl1);
             metaDataset.appendChild(val1);
             rightCol.appendChild(metaDataset);
@@ -412,12 +564,23 @@ document.addEventListener('DOMContentLoaded', () => {
         // Tools Meta
         const metaTools = document.createElement('div');
         metaTools.className = 'modal-meta-item';
+
         const lbl2 = document.createElement('span');
         lbl2.className = 'modal-meta-label';
-        lbl2.textContent = "Tools & Libraries";
+
+        // Tool Icon
+        const toolIcon = createLucideIcon('wrench');
+        toolIcon.style.marginRight = '0.35rem';
+        lbl2.appendChild(toolIcon);
+
+        const toolText = document.createElement('span');
+        toolText.textContent = "Tools & Libraries";
+        lbl2.appendChild(toolText);
+
         const val2 = document.createElement('span');
         val2.className = 'modal-meta-value';
         val2.textContent = project.tools;
+
         metaTools.appendChild(lbl2);
         metaTools.appendChild(val2);
         rightCol.appendChild(metaTools);
@@ -429,7 +592,17 @@ document.addEventListener('DOMContentLoaded', () => {
         githubLink.setAttribute('rel', 'noopener noreferrer');
         githubLink.className = 'btn btn-primary';
         githubLink.style.marginTop = '1rem';
-        githubLink.textContent = "Explore Source Code";
+        githubLink.style.display = 'inline-flex';
+        githubLink.style.alignItems = 'center';
+        githubLink.style.gap = '0.5rem';
+
+        const gitIcon = createLucideIcon('github');
+        gitIcon.style.stroke = '#fff';
+        githubLink.appendChild(gitIcon);
+
+        const linkText = document.createTextNode("Explore Source Code");
+        githubLink.appendChild(linkText);
+
         rightCol.appendChild(githubLink);
 
         detailsGrid.appendChild(rightCol);
@@ -572,32 +745,7 @@ document.addEventListener('DOMContentLoaded', () => {
         feedbackPanel.style.display = 'block';
     }
 
-    /* --- GitHub Contribution Grid Generation --- */
-    const contribGrid = document.getElementById('contrib-grid');
-    if (contribGrid) {
-        contribGrid.replaceChildren();
-        const totalCells = 53 * 7; // 371 cells
-        const fragment = document.createDocumentFragment();
 
-        // Define probability map for contributions (realistic distribution)
-        // 0: empty, 1: light, 2: medium, 3: high, 4: very high
-        const levels = [0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 3, 4];
-
-        for (let i = 0; i < totalCells; i++) {
-            const cell = document.createElement('div');
-            // Pick a random level from the distribution
-            const randomLevel = levels[Math.floor(Math.random() * levels.length)];
-            cell.className = `contrib-cell level-${randomLevel}`;
-
-            // Add tooltip descriptions for extra realistic hover interaction
-            const daysAgo = totalCells - i;
-            const contributionsCount = randomLevel === 0 ? "No" : randomLevel * 2 + Math.floor(Math.random() * 2);
-            cell.title = `${contributionsCount} contributions ${daysAgo} days ago`;
-
-            fragment.appendChild(cell);
-        }
-        contribGrid.appendChild(fragment);
-    }
 
     /* --- Back-To-Top Toggle Logic --- */
     const backToTop = document.getElementById('back-to-top');
@@ -623,5 +771,39 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
         });
     });
+
+    /* --- Dynamic Viewer Counter --- */
+    const viewerValEl = document.getElementById('viewer-val');
+    if (viewerValEl) {
+        const hasCounted = sessionStorage.getItem('counted_this_session');
+        let apiUrl = 'https://countapi.mileshilliard.com/api/v1/hit/nourhankhalifa_portfolio_site_views_2026';
+        if (hasCounted) {
+            // Just get the current view count without incrementing
+            apiUrl = 'https://countapi.mileshilliard.com/api/v1/get/nourhankhalifa_portfolio_site_views_2026';
+        }
+
+        fetch(apiUrl)
+            .then(res => res.json())
+            .then(data => {
+                if (data && typeof data.value === 'number') {
+                    viewerValEl.textContent = data.value.toLocaleString();
+                    if (!hasCounted) {
+                        sessionStorage.setItem('counted_this_session', 'true');
+                    }
+                }
+            })
+            .catch(err => {
+                console.error("Failed to fetch live viewer count:", err);
+                // Secure client-side fallback if the public counter service is offline
+                let views = localStorage.getItem('portfolio_view_count') || 0;
+                views = parseInt(views, 10);
+                if (!hasCounted) {
+                    views++;
+                    localStorage.setItem('portfolio_view_count', views);
+                    sessionStorage.setItem('counted_this_session', 'true');
+                }
+                viewerValEl.textContent = views.toLocaleString();
+            });
+    }
 
 });
