@@ -1,0 +1,41 @@
+{
+  "name": "Nourhan Khalifa | Data Analyst Portfolio",
+  "short_name": "NK Portfolio",
+  "description": "Professional Data Analyst portfolio featuring Power BI dashboards, SQL, Python, Excel, and business intelligence projects.",
+  "start_url": "/N_Portfolio/",
+  "scope": "/N_Portfolio/",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#0F172A",
+  "orientation": "portrait-primary",
+  "lang": "en",
+  "categories": [
+    "business",
+    "education",
+    "portfolio",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "images/letter-n (1).png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "images/letter-n (2).png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "images/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

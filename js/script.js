@@ -127,19 +127,24 @@ function createLucideIcon(iconName) {
         const path2 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         path2.setAttribute('d', 'M3 12C3 13.66 7.03 15 12 15C16.97 15 21 13.66 21 12');
         svg.appendChild(path2);
-    } else if (iconName === 'tool' || iconName === 'wrench') {
+    } else if (iconName === 'wrench') {
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         path.setAttribute('d', 'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z');
         svg.appendChild(path);
     } else if (iconName === 'github') {
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('d', 'M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22');
-        svg.appendChild(path);
+        const i = document.createElement('i');
+        i.className = 'devicon-github-original';
+        i.style.fontSize = '16px';
+        i.style.display = 'inline-block';
+        return i;
     }
     return svg;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    if (window.lucide) {
+        lucide.createIcons();
+    }
 
     /* --- Theme Toggle Logic --- */
     const themeToggleBtn = document.getElementById('theme-toggle');
@@ -434,7 +439,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Open Project Details Modal
     document.querySelectorAll('.view-project-details').forEach(btn => {
-        btn.addEventListener('click', (e) => {
+        btn.addEventListener('click', () => {
             const projectId = btn.getAttribute('data-project-id');
             const project = projectsData[projectId];
 
@@ -652,13 +657,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Open Lightbox for Certificates
+    let activePdfPath = null;
+
+    lightboxCaption.addEventListener('click', () => {
+        if (activePdfPath) {
+            window.open(activePdfPath, "_blank", "noopener,noreferrer");
+        }
+    });
+
     document.querySelectorAll('.open-certificate-lightbox').forEach(btn => {
         btn.addEventListener('click', () => {
             const imgPath = btn.getAttribute('data-img-path');
+            const pdfPath = btn.getAttribute('data-pdf-path');
             const caption = btn.getAttribute('data-caption');
 
             lightboxImage.setAttribute('src', imgPath);
             lightboxCaption.textContent = caption;
+
+            activePdfPath = pdfPath || null;
+            if (activePdfPath) {
+                lightboxCaption.classList.add('has-pdf');
+            } else {
+                lightboxCaption.classList.remove('has-pdf');
+            }
 
             modalOverlay.classList.add('active');
             lightboxModal.style.display = 'block';

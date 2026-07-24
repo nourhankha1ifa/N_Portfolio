@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nourhankha1ifa.github.io/N_Portfolio/sitemap.xml
