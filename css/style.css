@@ -304,6 +304,7 @@ select {
     -webkit-text-fill-color: transparent;
     display: flex;
     align-items: center;
+    padding-left: 0px;
 }
 
 
