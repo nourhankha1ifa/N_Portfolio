@@ -717,7 +717,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = document.getElementById('form-submit-btn');
     const feedbackPanel = document.getElementById('form-feedback-panel');
 
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         // Perform basic input validation
@@ -738,24 +738,65 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Update button state (Simulate sending)
+        // Honeypot bot prevention check
+        const honeyVal = contactForm.querySelector('input[name="_honey"]')?.value;
+        if (honeyVal) {
+            return;
+        }
+
+        // Update button state (Sending...)
         submitBtn.disabled = true;
         const originalText = submitBtn.textContent;
         submitBtn.textContent = "Delivering message...";
 
-        // Simulate AJAX request
-        setTimeout(() => {
-            showFeedback(`Thank you, ${nameVal}! Your message has been sent successfully. Nourhan will get back to you soon.`, "success");
-            contactForm.reset();
+        try {
+            // Send real AJAX request to FormSubmit endpoint
+            const endpoint = contactForm.getAttribute('action') || 'https://formsubmit.co/ajax/nourhankhalifa186@gmail.com';
+
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: nameVal,
+                    email: emailVal,
+                    _replyto: emailVal,
+                    subject: subjectVal,
+                    message: messageVal,
+                    _subject: `Portfolio Contact: ${subjectVal}`,
+                    _template: 'table',
+                    _captcha: 'false'
+                })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                if (data.success === "true" || data.success === true) {
+                    showFeedback(`Thank you, ${nameVal}! Your message has been sent successfully. Nourhan will get back to you soon.`, "success");
+                    contactForm.reset();
+                } else {
+                    showFeedback("Message submission was rejected by the mail server. Please try again later.", "error");
+                }
+            } else {
+                showFeedback("Unable to deliver message at this time. Please try again or email directly.", "error");
+            }
+        } catch (err) {
+            showFeedback("Network error. Please check your internet connection and try again.", "error");
+        } finally {
+            // Always restore submit button state
             submitBtn.disabled = false;
             submitBtn.textContent = originalText;
 
-            // Auto hide feedback after 8 seconds
+            // Auto hide feedback after 8 seconds if submission was successful
             setTimeout(() => {
-                feedbackPanel.style.display = 'none';
-                feedbackPanel.replaceChildren();
+                if (feedbackPanel.classList.contains('success')) {
+                    feedbackPanel.style.display = 'none';
+                    feedbackPanel.replaceChildren();
+                }
             }, 8000);
-        }, 1500);
+        }
     });
 
     function showFeedback(text, type) {
